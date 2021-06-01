@@ -12,7 +12,7 @@ The Sarek tsv-file should have 7 columns (tab-separated) and no headers
 
 Col 1 is Patient ID, col 2 is gender, col 3 is 1 for Tumor and 0 for Normal. col4 is Sample name, col5 is sample name (+ lane if sequenced in multiple lanes), col6 is path to R1 fastq file, col7 is path to R2 fastq file.
 
-Start by automatically generate col6 and col7 for all samples, then edit the resulting file and type in col 1-5 manually.
+Start by automatically generate col6 and col7 for all samples using the code snippet below, then edit the resulting file and type in col 1-5 manually.
 
 Go to a parent folder of the fastq files, list all R1 fastq.gz files, then R2 files. `pwd` is the path to the current directory. Keep this to get full paths.
 
@@ -23,4 +23,11 @@ paste r1files.txt r2files.txt > all.tsv
 ```
 
 Open the all.tsv file in a text editor and add the missing columns.
+
+It is recommended to start Sarek separately for each patient. The code below takes all.tsv and divides into one tsv file per patient
+
+```bash
+cut -f1 all.tsv | sort| uniq| while read -r name; do grep $name all.tsv > $name.tsv; done
+```
+
 
