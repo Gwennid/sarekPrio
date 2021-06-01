@@ -5,7 +5,7 @@
 
 The Sarek tsv-file should have 7 columns and no headers
 
-|-------------|-----|---|-----------------|----------------------|------------------|------------------|
+| ----------- | --- | - | --------------- | -------------------- | ---------------- | ---------------- |
 | Patient 1   | XX  | 1 | Patient1-Tumor  | Patient1-Tumor-L001  | p1-T_R1.fastq.gz | p1-T_R2.fastq.gz |
 | Patient 1   | XX  | 0 | Patient1-Normal | Patient1-Normal-L001 | p1-N_R1.fastq.gz | p1-N_R2.fastq.gz |
 
