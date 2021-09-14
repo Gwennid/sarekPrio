@@ -31,11 +31,12 @@ for i in "${!R1_PATHS[@]}"
 do
     outputdir=$(dirname "${R1_PATHS[i]}")
     name=$( basename "${R1_PATHS[i]}" | sed s/'_R1_001.fastq.gz'//g)
-    repair.sh in1=$OUTPUT_DIRECTORY/trimmed/$name"_R1_001_trimmed.fq.gz" in2=$OUTPUT_DIRECTORY/trimmed/$name"_R2_001_trimmed.fq.gz" out1=$OUTPUT_DIRECTORY/trimmed/$name"_R1_001_trimmed_fixed.fastq.gz" out2=$OUTPUT_DIRECTORY/trimmed/$i"_R2_001_trimmed_fixed.fastq.gz" outsingle=$OUTPUT_DIRECTORY/trimmed/$i"_single.fastq.gz" &
+    repair.sh in1=$OUTPUT_DIRECTORY/trimmed/$name"_R1_001_trimmed.fq.gz" in2=$OUTPUT_DIRECTORY/trimmed/$name"_R2_001_trimmed.fq.gz" out1=$OUTPUT_DIRECTORY/trimmed/$name"_R1_001_trimmed_fixed.fastq.gz" out2=$OUTPUT_DIRECTORY/trimmed/$name"_R2_001_trimmed_fixed.fastq.gz" outsingle=$OUTPUT_DIRECTORY/trimmed/$name"_single.fastq.gz" &
 done
 wait
 
 #create trimmed tsv_file
 newfilename=$OUTPUT_DIRECTORY/trimmed/"$( basename $TSV_FILE)"
+./make_trimmed_tsv.py $TSV_FILE $OUTPUT_DIRECTORY
 
 
