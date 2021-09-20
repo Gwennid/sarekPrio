@@ -6,7 +6,6 @@
 #$ -pe mpi 40
 #$ -l excl=1
 module load nextflow
-module load singularity
 Sarek_installation_path=/apps/bio/software/sarek/
 
 #Setup
@@ -18,7 +17,7 @@ genome_base=/medstore/Illumina_Tobias/db/GRCh37/
 
 #Run preprocessing
 ./scripts/run_trimming.sh $tsv $outdirname
-newtsvname=$OUTPUT_DIRECTORY/trimmed/"$( basename $TSV_FILE)"
+newtsvname=$outdirname/trimmed/"$( basename $tsv)"
 
 
 #Run Sarek pipeline
