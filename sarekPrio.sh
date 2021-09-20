@@ -5,7 +5,7 @@
 #$ -q batch.q
 #$ -pe mpi 40
 #$ -l excl=1
-module load nextflow
+module load nextflow/0.29.1.4804
 Sarek_installation_path=/apps/bio/software/sarek/
 
 #Setup
