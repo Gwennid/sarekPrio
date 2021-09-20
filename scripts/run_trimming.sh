@@ -37,6 +37,6 @@ wait
 
 #create trimmed tsv_file
 newfilename=$OUTPUT_DIRECTORY/trimmed/"$( basename $TSV_FILE)"
-./make_trimmed_tsv.py $TSV_FILE $OUTPUT_DIRECTORY
+./scripts/make_trimmed_tsv.py $TSV_FILE $OUTPUT_DIRECTORY
 
 
